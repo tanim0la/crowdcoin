@@ -59,13 +59,13 @@ class RequestIndex extends Component {
           <table className="table-fixed  border text-center">
             <thead className="border-b bg-gray-800 text-white ">
               <tr>
-                <th className="py-3">ID</th>
-                <th className="px-24">Description</th>
-                <th>Amount</th>
-                <th>Recipient</th>
-                <th>Approval Count</th>
-                <th>Approve</th>
-                <th>Finalize</th>
+                <th className="py-3 px-3 md:px-6">ID</th>
+                <th className="px-24 md:px-40">Description</th>
+                <th className="px-5 md:px-10">Amount</th>
+                <th className="px-24 md:px-32">Recipient</th>
+                <th className="px-5 md:px-10">Approval Count</th>
+                <th className="px-6 md:px-12">Approve</th>
+                <th className="px-6 md:px-12">Finalize</th>
               </tr>
             </thead>
             <tbody>{this.renderRows()}</tbody>
