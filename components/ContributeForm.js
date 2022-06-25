@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Form, Input, Message } from 'semantic-ui-react'
-import web3 from '../ethereum/web3'
+import Web3 from 'web3'
 import Campaign from '../ethereum/campaign'
 import { Router } from '../routes'
 
@@ -13,6 +13,7 @@ class ContributeForm extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault()
+    let web3 = new Web3(window.ethereum)
 
     const campaign = Campaign(this.props.address)
     this.setState({ loading: true, errMessage: '' })

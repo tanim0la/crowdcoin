@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, Message, Input } from 'semantic-ui-react'
 import Layout from '../../../components/Layout'
-import web3 from '../../../ethereum/web3'
+import Web3 from 'web3'
 import Campaign from '../../../ethereum/campaign'
 import { Router, Link } from '../../../routes'
 
@@ -22,6 +22,8 @@ class RequestNew extends Component {
   onSubmit = async (e) => {
     e.preventDefault()
     const { address } = this.props
+
+    let web3 = new Web3(window.ethereum)
 
     this.setState({ loading: true, errMessage: '' })
     try {

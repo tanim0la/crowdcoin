@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../../../components/Layout'
-import { Button, Table, TabPane } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import { Link } from '../../../routes'
 import Campaign from '../../../ethereum/campaign'
 import RequestRow from '../../../components/RequestRow'
@@ -55,7 +55,7 @@ class RequestIndex extends Component {
           </div>
         </div>
 
-        <div className="overflow-x-auto scrollbar-hide">
+        <div className="overflow-x-auto scrollbar-hide w-full">
           <table className="table-fixed  border text-center">
             <thead className="border-b bg-gray-800 text-white ">
               <tr>

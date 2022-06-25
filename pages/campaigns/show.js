@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Card, Grid } from 'semantic-ui-react'
 import Layout from '../../components/Layout'
+import Web3 from 'web3'
 import Campaign from '../../ethereum/campaign'
-import web3 from '../../ethereum/web3'
 import ContributeForm from '../../components/ContributeForm'
 import { Link } from '../../routes'
 
@@ -23,6 +23,11 @@ class Show extends Component {
   }
 
   render() {
+    // We are on the server *OR* the user is not running metamask
+    const provider = new Web3.providers.HttpProvider(
+      'https://rinkeby.infura.io/v3/adaa638d09ba451589fc8a00235e3489',
+    )
+    let web3 = new Web3(provider)
     return (
       <Layout>
         <div className="flex flex-row justify-between py-4">

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../../components/Layout'
 import { Form, Input, Button, Message } from 'semantic-ui-react'
 import factory from '../../ethereum/factory'
-import web3 from '../../ethereum/web3'
+import Web3 from 'web3'
 import { Router } from '../../routes'
 
 class CampaignNew extends Component {
@@ -14,6 +14,8 @@ class CampaignNew extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault()
+
+    let web3 = new Web3(window.ethereum)
 
     this.setState({ loading: true, errMessage: '' })
     try {

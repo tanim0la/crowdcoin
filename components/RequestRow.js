@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Table, Button } from 'semantic-ui-react'
-import web3 from '../ethereum/web3'
+import { Button } from 'semantic-ui-react'
+import Web3 from 'web3'
 import Campaign from '../ethereum/campaign'
 import { Router } from '../routes'
 
 class RequestRow extends Component {
   onApprove = async () => {
+    let web3 = new Web3(window.ethereum)
+
     const campaign = Campaign(this.props.address)
     const accounts = await web3.eth.getAccounts()
 
@@ -17,6 +19,8 @@ class RequestRow extends Component {
   }
 
   onFinalize = async () => {
+    let web3 = new Web3(window.ethereum)
+
     const campaign = Campaign(this.props.address)
     const accounts = await web3.eth.getAccounts()
 
@@ -30,6 +34,12 @@ class RequestRow extends Component {
   render() {
     const { id, request, approversCount } = this.props
     const readyToFinalize = request.approvalCount > approversCount / 2
+
+    //We are on the server *OR* the user is not running metamask
+    const provider = new Web3.providers.HttpProvider(
+      'https://rinkeby.infura.io/v3/adaa638d09ba451589fc8a00235e3489',
+    )
+    let web3 = new Web3(provider)
 
     return (
       <tr
