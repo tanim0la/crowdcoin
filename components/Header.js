@@ -36,7 +36,7 @@ const Header = () => {
 
       setWord(accounts[0])
     } else {
-      setWord('CONNECT WALLET')
+      setWord('NO METAMASK')
     }
   }
   return (
