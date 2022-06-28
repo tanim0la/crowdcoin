@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Web3 from 'web3'
-import { Link } from '../routes'
+import Link from 'next/link'
 
 const Header = () => {
   let accounts
@@ -36,14 +36,14 @@ const Header = () => {
 
       setWord(accounts[0])
     } else {
-      setWord('NO METAMASK')
+      setWord('CONNECT WALLET')
     }
   }
   return (
     <>
       <div className="flex justify-between  px-4">
         <div className="py-7">
-          <Link route="/">
+          <Link href="/">
             <span className="text-2xl font-bold cursor-pointer md:text-3xl">
               Crowd<span className="text-blue-500">Coin</span>
             </span>
