@@ -44,8 +44,8 @@ function RequestRow(props) {
 
   return (
     <tr
-      disabled={request.complete}
-      positive={readyToFinalize && !request.complete}
+      disabled={request.complete === 'true'}
+      positive={readyToFinalize && !request.complete === 'true'}
       className="border-b"
     >
       <td className="text-base text-gray-900 sm:text-lg  font-light px-6 py-4 whitespace-nowrap border-r">
